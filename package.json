@@ -1,10 +1,11 @@
 {
   "name": "gift-giver-lab",
   "version": "1.0.0",
-  "description": "",
+  "description": "A client has asked you to create an app that operates as a competitor to https://www.elfster.com. They're a company valued at $6 million that creates gift exchanges for families and friends.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,13 @@
   "dependencies": {
     "express": "^5.0.0-alpha.8",
     "morgan": "^1.10.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gevork-Manukyan/gift_giver_starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gevork-Manukyan/gift_giver_starter/issues"
+  },
+  "homepage": "https://github.com/Gevork-Manukyan/gift_giver_starter#readme"
 }
