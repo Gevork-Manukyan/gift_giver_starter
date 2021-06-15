@@ -14,8 +14,8 @@ router.get("/", async(req, res, next) => {
 router.post("/new-game", async(req, res, next) => {
     
     try {
-        const playerList = req.body.names;
-        await GiftExchange.traditional(playerList);
+        let playerList = req.body.names;
+        playerList = await GiftExchange.traditional(playerList);
 
         res.status(200).json(playerList);
     } catch (err) {
@@ -25,8 +25,8 @@ router.post("/new-game", async(req, res, next) => {
 
 router.post("/start-game", async(req, res, next) => {
     try {   
-        const playerList = req.body.names;
-        await GiftExchange.traditional(playerList);
+        let playerList = req.body.names;
+        playerList = await GiftExchange.traditional(playerList);
 
         res.status(200).json(playerList);
     } catch (err) {
