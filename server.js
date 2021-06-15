@@ -2,7 +2,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const giftsRouter = require("./routes/gift-exchange");
-const quizRouter = require("./models/GiftGiver");
+const quizRouter = require("./routes/GiftGiver");
 const { NotFoundError } = require("./Utils/errors");
 
 const app = express();
@@ -17,6 +17,8 @@ app.use("/quiz", quizRouter);
 app.get("/", async(req, res, next) => {
     res.status(200).json({ping: "pong"});
 });
+
+
 
 /**Handles all  404 errors not handled by a route (Route not set to one defined) */
 // Will run if the route is not defined (notice there is no "" with text)

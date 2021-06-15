@@ -4,6 +4,7 @@ const router = express.Router();
 
 
 router.get("/", async(req, res, next) => {
+    console.log("enttered")
     try {
         res.status(200).json({gift: "ring"});
     } catch (err) {
