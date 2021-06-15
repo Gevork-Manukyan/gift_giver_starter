@@ -1,4 +1,4 @@
-const { get } = require("../routes/gift-exchange");
+const { NotFoundError, BadRequestError } = require("../Utils/errors");
 
 class GiftExchange {
     static async pairs (names) {
@@ -38,6 +38,10 @@ class GiftExchange {
         //"they is giving a gift to us",
         //"us is giving a gift to me",
         //returns array of strings
+
+        if (names.length % 2 != 0)
+            throw new BadRequestError("You need an even number of people to play");
+
         const playerPairs = await this.pairs(names);
 
         const pairPhraseArr = [];

@@ -2,6 +2,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const giftsRouter = require("./routes/gift-exchange");
+const { NotFoundError } = require("./Utils/errors");
 
 const app = express();
 
