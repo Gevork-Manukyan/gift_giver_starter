@@ -42,6 +42,9 @@ class GiftExchange {
         if (names.length % 2 != 0)
             throw new BadRequestError("You need an even number of people to play");
 
+        if (names.length === 0)
+            throw new BadRequestError("You need atleast 2 players")
+
         const playerPairs = await this.pairs(names);
 
         const pairPhraseArr = [];

@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 /**Generic error handler - anything that is unhandled will be handled here */
 // Will run if somewhere next is used to pass on error ( next(err) ) hence the error perameter
-// The final function in the pipline if nothing else has return the response yet
+// The final function in the pipeline if nothing else has return the response yet
 app.use((error, req, res, next) => {
     console.log("final function entered")
     const status = error.status || 500;  //status equals status number or 500 (500 means internal server error)
