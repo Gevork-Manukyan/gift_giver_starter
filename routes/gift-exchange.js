@@ -1,25 +1,17 @@
 const express = require("express")
+const GiftExchange = require("../models/gift-exchange");
 const router = express.Router();
 
-const gifts = {
-    ring: 0,
-    car: 0,
-    cards: 0,
-    money: 0
-}
 
 router.get("/", async(req, res, next) => {
-    res.status(200).json(gifts);
+    res.status(200).json({gift: "ring"});
 })
 
-router.post("/:giftName", async(req, res, next) => {
-    const giftName = req.params.giftName;
+router.post("/new-game", async(req, res, next) => {
+    const playerList = req.body.names;
+    GiftExchange.traditional(playerList);
 
-    if ( (gifts[giftName]) || (gifts[giftName] ===0) ) {
-        gifts[giftName]++;
-    }
-
-    res.status(200).json(gifts);
+    res.status(200).json(playerList);
 })
 
 
